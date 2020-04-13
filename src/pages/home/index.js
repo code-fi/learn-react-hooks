@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import TopNavigation from '../../components/top-menu';
-import './style.css';
 import { getHeadLines } from '../../services/http';
 import NewsHero from '../../components/news-hero';
 import {shuffle} from 'lodash';
-import Loader from '../../components/Loader';
+import Loader from '../../components/loader';
 
 export default function Home() {
     const [headlines, setHeadlines] = useState([]);

@@ -20,7 +20,6 @@ instance.interceptors.response.use(response => response, (error) => {
 
 
 const getHeadLines = (page) => {
-    const now = new Date().toISOString();
     const url = page ? `top-headlines?pageSize=20&language=en&category=${page}` :  'top-headlines?language=en'
     return instance.get(url);
 }

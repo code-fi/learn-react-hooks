@@ -7,6 +7,7 @@ export default function TopNavigation({onChangePage}) {
     const [activeMenu, setActiveMenu] = React.useState(menuItems[0]);
     useEffect(()=>{
         onChangePage(activeMenu == 'top stories' ? null : activeMenu);
+        document.title = `Slide News | ${activeMenu}`
     },[activeMenu]);    
 
 

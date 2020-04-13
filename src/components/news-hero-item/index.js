@@ -1,10 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import like from '../../assets/images/like.png';
-import likeActive from '../../assets/images/like-active.png';
-import bookmark from '../../assets/images/bookmark.png';
-import bookmarkActive from '../../assets/images/bookmark-active.png';
-import IconButton from '../../components/icon-button';
+import click from '../../assets/images/click.png';
+// import like from '../../assets/images/like.png';
+// import likeActive from '../../assets/images/like-active.png';
+// import bookmark from '../../assets/images/bookmark.png';
+// import bookmarkActive from '../../assets/images/bookmark-active.png';
+// import IconButton from '../../components/icon-button';
 
 export default function NewsHeroItem({ article }) {
     const time = moment(article.publishedAt).fromNow();
@@ -20,18 +21,7 @@ export default function NewsHeroItem({ article }) {
                     <span className="time">{time}</span>
                 </div>
                 <div className="reactions-container">
-                    <IconButton
-                        image={like}
-                        title="Like"
-                        activeImage={likeActive}
-                        onClick={(state) => console.log(state)}
-                    />
-                    <IconButton
-                        image={bookmark}
-                        title="Save for later"
-                        activeImage={bookmarkActive}
-                        onClick={(state) => console.log(state)}
-                    />
+                    <a target="_blank" href={article.url}><img src={click}/></a>
                 </div>
             </div>
 
