@@ -16,7 +16,7 @@ export default function NewsHeroItem({ article }) {
                     <span className="time">{time}</span>
                 </div>
                 <div className="reactions-container">
-                    <a rel="noopener noreferrer" target="_blank" href={article.url}><img src={click} /></a>
+                    <a rel="noopener noreferrer" target="_blank" href={article.url}><img src={click} alt="button" /></a>
                 </div>
             </div>
 
