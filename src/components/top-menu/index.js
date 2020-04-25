@@ -1,19 +1,23 @@
-import React,{useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 import './style.css';
 import { menuItems } from "../../utils/data";
 
-export default function TopNavigation({onChangePage}) {
+export default function TopNavigation({ onChangePage }) {
     const [activeMenu, setActiveMenu] = React.useState(menuItems[0]);
-    useEffect(()=>{
-        onChangePage(activeMenu === 'top stories' ? null : activeMenu);
+    useEffect(() => {
         document.title = `Slide News | ${activeMenu}`
-    },[activeMenu]);    
+    }, [activeMenu]);
+
+    const menuClick = (menuItem) => {
+        setActiveMenu(menuItem);
+        onChangePage(menuItem === 'top stories' ? null : menuItem);
+    }
 
 
     const menu = menuItems.map(menuItem =>
         <li className={activeMenu === menuItem ? 'active' : null} key={menuItem}>
-            <button onClick={() => setActiveMenu(menuItem)}>{menuItem}</button>
+            <button onClick={() => menuClick(menuItem)}>{menuItem}</button>
         </li>
     );
     return (
