@@ -1,12 +1,12 @@
 import React,{useEffect} from 'react';
 
 import './style.css';
-import { menuItems } from "../../utils/mixins";
+import { menuItems } from "../../utils/data";
 
 export default function TopNavigation({onChangePage}) {
     const [activeMenu, setActiveMenu] = React.useState(menuItems[0]);
     useEffect(()=>{
-        onChangePage(activeMenu == 'top stories' ? null : activeMenu);
+        onChangePage(activeMenu === 'top stories' ? null : activeMenu);
         document.title = `Slide News | ${activeMenu}`
     },[activeMenu]);    
 

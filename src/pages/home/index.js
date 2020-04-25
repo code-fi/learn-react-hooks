@@ -18,7 +18,7 @@ export default function Home() {
         setAppState(a => ({ ...a, loading: true }));
         getHeadLines(page)
         .then(response => {
-            if (response && response.data && response.data.status == 'ok') {
+            if (response && response.data && response.data.status === 'ok') {
                 setHeadlines(shuffle(response.data.articles));
             }
         }, error => {
